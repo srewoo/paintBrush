@@ -1,0 +1,47 @@
+/* "Color your own picture" page. Shares book.css (header, pills, crayon box). */
+a.pill { text-decoration: none; }
+.upload-btn { cursor: pointer; white-space: nowrap; }
+.bar h1 { white-space: nowrap; }
+.studio-desk { align-items: flex-start; padding-top: 4px; overflow: auto; }
+.studio-col { display: grid; gap: 10px; width: min(760px, calc(100vw - 360px)); }
+.drop {
+  position: relative; min-height: min(70vh, 640px); display: grid; place-items: center; padding: 16px;
+  background: #fff; border-radius: 16px; box-shadow: 0 2px 4px rgba(60, 40, 20, .08), 0 14px 34px rgba(60, 40, 20, .12);
+}
+.drop.over { outline: 4px dashed var(--accent); outline-offset: -10px; }
+.empty { max-width: 420px; display: grid; justify-items: center; gap: 10px; text-align: center; }
+.empty > svg { width: 64px; height: 64px; fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.empty h2 { margin: 0; font-size: 22px; }
+.empty p { margin: 0; color: var(--muted); font-weight: 600; }
+.empty .small { font-size: 13px; }
+.sheet-wrap { position: relative; width: 100%; max-height: min(70vh, 640px); display: grid; place-items: center; }
+.layer { grid-area: 1 / 1; max-width: 100%; max-height: min(66vh, 610px); width: auto; height: auto; }
+.lines { pointer-events: none; }
+#colour { cursor: pointer; touch-action: manipulation; }
+.status { min-height: 1.3em; margin: 0; color: var(--muted); font-weight: 700; }
+.status.warn { color: var(--danger); }
+.mine h2 { margin: 6px 0 8px; font-size: 18px; }
+.mine-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.mine-list .empty-note { color: var(--muted); font-weight: 600; margin: 0; }
+.pic { position: relative; }
+.pic > button:first-child {
+  display: block; width: 110px; height: 110px; padding: 6px; border: 0; border-radius: 12px; background: #fff;
+  box-shadow: 0 1px 3px rgba(60, 40, 20, .15);
+}
+.pic > button:first-child[aria-current="true"] { box-shadow: 0 0 0 3px var(--accent); }
+.pic img { width: 100%; height: 100%; object-fit: contain; }
+.pic .del {
+  position: absolute; top: -8px; right: -8px; width: 28px; height: 28px; display: grid; place-items: center; padding: 0;
+  border: 0; border-radius: 50%; background: #fff; color: var(--danger); box-shadow: 0 1px 4px rgba(0, 0, 0, .25); font-size: 14px; font-weight: 900;
+}
+.pic .del.armed { width: auto; padding: 0 10px; border-radius: 99px; background: var(--danger); color: #fff; font-size: 12px; }
+.print-img { display: none; }
+
+@media (max-width: 900px) {
+  .studio-col { width: 100%; }
+  .studio-desk { flex-direction: column; align-items: stretch; }
+}
+@media print {
+  .app { display: none !important; }
+  .print-img { display: block; width: 100%; height: auto; }
+}

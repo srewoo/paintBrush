@@ -1,0 +1,19 @@
+{
+  "name": "paintbrush",
+  "version": "1.2.0",
+  "private": true,
+  "description": "150 offline coloring pages for ages 2-9. Tap to color, stickers, color-by-number, shiny crayons. No ads, no tracking.",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "release:patch": "npm version patch --no-git-tag-version && npm run build",
+    "release:minor": "npm version minor --no-git-tag-version && npm run build",
+    "release:major": "npm version major --no-git-tag-version && npm run build",
+    "preview": "node tools/preview.mjs",
+    "test": "node tools/fill.test.mjs",
+    "lint:art": "node tools/lint.mjs pages/2-3/[!i]*.js pages/4-6/[!i]*.js pages/7-9/[!i]*.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

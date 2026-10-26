@@ -1,0 +1,22 @@
+# Build output: the Web Store upload zip (npm run build)
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Local tooling
+.playwright-mcp/
+.claude/*.lock
+node_modules/
+*.log
+.claude
+brag-output
+
+
+# chrome
+store
+dist

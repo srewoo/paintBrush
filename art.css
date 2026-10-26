@@ -1,0 +1,8 @@
+/* Line-art defaults shared by every page drawing (pages/<age>/*.js). */
+svg.art { stroke: #1d1d1f; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+svg.art.age-2-3 { stroke-width: 6; }
+svg.art.age-7-9 { stroke-width: 2.5; }
+svg.art :where(path, circle, ellipse, rect, polygon, polyline) { fill: #fff; }
+svg.art .bg { stroke: none; }
+svg.art .l { fill: none; pointer-events: none; }
+svg.art .k { fill: #1d1d1f; pointer-events: none; }

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>paintBrush · Color your own picture</title>
+<link rel="stylesheet" href="book.css">
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+<svg id="defs" class="defs" aria-hidden="true"></svg>
+<div class="app">
+<header class="bar">
+  <a class="pill" href="book.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10"/></svg><span class="lbl">Home</span>
+  </a>
+  <h1>Color your own picture</h1>
+  <div class="tools">
+    <label class="pill primary upload-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg><span class="lbl">Upload a drawing</span>
+      <input id="file" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp" hidden>
+    </label>
+    <button id="save" class="pill" type="button" disabled>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span class="lbl">Save picture</span>
+    </button>
+    <button id="print" class="pill" type="button" disabled>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z"/></svg><span class="lbl">Print</span>
+    </button>
+  </div>
+</header>
+
+<main class="desk studio-desk">
+  <div class="studio-col">
+    <div id="drop" class="drop">
+      <div id="empty" class="empty">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l4-4 3 3 5-5 4 4M4 4h16v16H4zM9 8.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+        <h2>Turn any drawing into a coloring page</h2>
+        <p>Choose a black-and-white line drawing (PNG or JPG), or drop it here. Tap any space between the lines to fill it.</p>
+        <label class="pill primary">Choose a picture<input id="file2" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp" hidden></label>
+        <p class="small">Pictures stay on this computer. Nothing is uploaded to the internet.</p>
+      </div>
+      <div id="sheet" class="sheet-wrap" hidden>
+        <canvas id="colour" class="layer"></canvas>
+        <canvas id="lines" class="layer lines"></canvas>
+      </div>
+    </div>
+    <p id="status" class="status" role="status"></p>
+    <section class="mine" aria-labelledby="mineTitle">
+      <h2 id="mineTitle">My pictures</h2>
+      <div id="mine" class="mine-list"></div>
+    </section>
+  </div>
+  <aside class="crayons" aria-label="Crayons">
+    <div class="crayons-head">
+      <h2>Crayons</h2>
+      <span id="current" class="current" aria-live="polite"></span>
+    </div>
+    <div id="sets" class="sets" role="tablist" aria-label="Crayon sets"></div>
+    <div id="palette" class="palette" role="tabpanel"></div>
+    <div class="panel-actions">
+      <button id="undo" class="pill" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h10a6 6 0 010 12h-3"/></svg><span class="lbl">Undo</span>
+      </button>
+      <button id="clear" class="pill danger" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg><span class="lbl">Erase colors</span>
+      </button>
+    </div>
+  </aside>
+</main>
+</div>
+<img id="printImg" class="print-img" alt="">
+<script type="module" src="studio.js"></script>
+</body>
+</html>
